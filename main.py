@@ -119,6 +119,7 @@ while True:
         score_blue += 1
         ball.dx = 0.05
         ball.dy = 0.05
+        ball.color("white")
         pen.clear()
         pen.write("BLUE: {}  RED: {}".format(score_blue, score_red), align="center", font=("Courier", 24, "normal"))
 
@@ -128,6 +129,7 @@ while True:
         score_red += 1
         ball.dx = 0.05
         ball.dy = 0.05
+        ball.color("white")
         pen.clear()
         pen.write("BLUE: {}  RED: {}".format(score_blue, score_red), align="center", font=("Courier", 24, "normal"))
 
