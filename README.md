@@ -1,5 +1,5 @@
-# simple-game
-simple pong game for beginners in python.
+# simple-pong-game
+Simple pong game for beginners in python.
 
-this is a simple pong game in python using turtle.
-i didnt use object oriented programming.
+This is a simple pong game in python using turtle.
+The code is written without using object oriented programming.
