@@ -68,24 +68,28 @@ ball.dy = 0.05
 
 # functions
 def a_up():
-    y = paddle_a.ycor()
-    y += 20
-    paddle_a.sety(y)
+    if(paddle_a.ycor() < 260):
+        y = paddle_a.ycor()
+        y += 20
+        paddle_a.sety(y)
 
 def a_down():
-     y = paddle_a.ycor()
-     y -= 20
-     paddle_a.sety(y)
+    if (paddle_a.ycor() > -260):
+        y = paddle_a.ycor()
+        y -= 20
+        paddle_a.sety(y)
 
 def b_up():
-    y = paddle_b.ycor()
-    y += 20
-    paddle_b.sety(y)
+    if(paddle_b.ycor()<260):
+        y = paddle_b.ycor()
+        y += 20
+        paddle_b.sety(y)
 
 def b_down():
-     y = paddle_b.ycor()
-     y -= 20
-     paddle_b.sety(y)
+    if (paddle_b.ycor() > -260):
+        y = paddle_b.ycor()
+        y -= 20
+        paddle_b.sety(y)
 
 # keyboard binding
 wn.listen()
@@ -114,8 +118,8 @@ while True:
         ball.goto(0,0)
         ball.dx *= -1
         score_blue += 1
-        ball.dx *=1.1
-        ball.dy *=1.1
+        ball.dx *=1.05
+        ball.dy *=1.05
         pen.clear()
         pen.write("BLUE: {}  RED: {}".format(score_blue,score_red), align="center", font=("Courier", 24, "normal"))
 
@@ -123,8 +127,8 @@ while True:
         ball.goto(0,0)
         ball.dx *= -1
         score_red += 1
-        ball.dx *=1.1
-        ball.dy *=1.1
+        ball.dx *=1.05
+        ball.dy *=1.05
         pen.clear()
         pen.write("BLUE: {}  RED: {}".format(score_blue, score_red), align="center", font=("Courier", 24, "normal"))
 
@@ -135,13 +139,3 @@ while True:
     if ball.xcor()<-340 and ball.xcor()>-350 and (ball.ycor()<paddle_a.ycor()+50 and (ball.ycor()> paddle_a.ycor()-50)):
         ball.dx *= -1
         ball.color("blue")
-
-
-
-
-
-
-
-
-
-
